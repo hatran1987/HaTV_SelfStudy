@@ -5,7 +5,9 @@ import org.testng.Assert;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class FirstTestNGFile {
 
@@ -20,9 +22,21 @@ public class FirstTestNGFile {
 	
 	@Test
 	public void verifyLoginPageTitle(){
-		String expectedTitle = "Login";
+		String expectedTitle = "Home Page";
 		String actualTitle =driver. getTitle();
 		Assert.assertEquals(actualTitle, expectedTitle);
+	}
+	
+	@Test
+	public void Login(){
+		WebElement txtUsername = driver.findElement(By.id("username"));
+		txtUsername.sendKeys("john");
+		
+		WebElement txtPassword = driver.findElement(By.id("UIPortalLoginFormControl"));
+		txtPassword.sendKeys("gtn");
+		
+		WebElement btnLogin = driver.findElement(By.xpath("//div[@id='UIPortalLoginFormAction']/button"));
+		btnLogin.click();
 	}
 	
 	@AfterTest
