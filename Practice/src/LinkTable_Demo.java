@@ -1,9 +1,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import java.util.List;
 
-import com.thoughtworks.selenium.webdriven.commands.GetTitle;
-
+import org.openqa.selenium.*;
 
 public final class LinkTable_Demo {
 
@@ -13,21 +13,40 @@ public final class LinkTable_Demo {
 		WebDriver driver = new FirefoxDriver();
 		
 		String url = "localhost:8080/portal/acme/";
-		
+		       		
 		driver.get(url);
 		
-		String registerLink = driver.findElement(By.linkText("Register")).getText();
+				        		
+		// Test if all the links present within the page are working.
+		// Tao mot List ten linkElements, cac phan tu co kieu la WebElement
+		List<WebElement> linkElements = driver.findElements(By.tagName("a"));
 		
-		System.out.println();
+			
+		// Khai bao mot mang kieu String, co so phan tu bag kich thuoc cua linkElements
+		String[] linkTexts = new String[linkElements.size()];
 		
-		System.out.println("Register: " + registerLink);
-		
-		System.out.println();
-		
-		driver.findElement(By.linkText("Register")).click();
-		
-		System.out.println("The title of this page is " + driver.getTitle());
-		
+		// Duyet qua list linkElements, lay tung phan tu cua list, roi chuyen thanh kieu String,
+		// sau do gan vao phan tu tuog ung cua mang linkTexts
+		int i=0;
+			
+		for (WebElement e: linkElements){
+			linkTexts[i] = e.getText();
+			if (linkTexts[i].length()!=0){
+			System.out.println(linkTexts[i]);
+			}
+			i++;
+		}
+	
+		//test each link	
+        for (String t : linkTexts) {
+        	if (driver.findElement(By.linkText(t)).getText().length()!=0){
+            driver.findElement(By.linkText(t)).click();
+            System.out.println(t + " is working.");
+        	}
+            
+            driver.navigate().back();
+        }
+        
 		driver.close();
 	}
 }
