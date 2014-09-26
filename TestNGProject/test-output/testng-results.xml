@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="6664" started-at="2014-09-26T09:53:12Z" finished-at="2014-09-26T09:53:18Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="6664" started-at="2014-09-26T09:53:12Z" finished-at="2014-09-26T09:53:18Z">
+      <class name="TestNGPackage.FirstTestNGFile">
+        <test-method status="PASS" signature="setURL()[pri:0, instance:TestNGPackage.FirstTestNGFile@3b1a82fd]" name="setURL" is-config="true" duration-ms="6539" started-at="2014-09-26T16:53:12Z" finished-at="2014-09-26T16:53:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setURL -->
+        <test-method status="PASS" signature="verifyLoginPageTitle()[pri:0, instance:TestNGPackage.FirstTestNGFile@3b1a82fd]" name="verifyLoginPageTitle" duration-ms="26" started-at="2014-09-26T16:53:18Z" finished-at="2014-09-26T16:53:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginPageTitle -->
+        <test-method status="PASS" signature="endSession()[pri:0, instance:TestNGPackage.FirstTestNGFile@3b1a82fd]" name="endSession" is-config="true" duration-ms="86" started-at="2014-09-26T16:53:18Z" finished-at="2014-09-26T16:53:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endSession -->
+      </class> <!-- TestNGPackage.FirstTestNGFile -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
